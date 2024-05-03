@@ -9,7 +9,15 @@ export const Container = styled.div`
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
-
+export const ButtonCar = styled.button`
+    width: 200px;
+    height: 45px;
+    margin-left: 5px;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+`
 export const ProdutoNum = styled.p`
 font-weight: bold;
 `;
