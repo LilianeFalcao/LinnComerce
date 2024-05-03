@@ -9,6 +9,7 @@ const CardProd = (props) => {
       <ProdutoName>Nome: {props.produtos.name}</ProdutoName>
       <ProdutoNum>Valor: {props.produtos.value}</ProdutoNum>
       <img src={props.produtos.imageUrl} alt={props.produtos.name} />
+      <button> Adicionar ao carrinho</button>
     </Container>
   );
 }

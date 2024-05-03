@@ -3,16 +3,19 @@ import styled from 'styled-components';
 
 const Container = styled.header`
     display: flex;
+    flex-direction: row;
     gap: 16px;
     padding: 20px;
     border: 1px solid #000;
 `
-
 const InputStyles = styled.input`
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 10px;
+`
+const HS = styled.h1`
+    width: 100%;
 `
 const Selec = styled.select`
     width: 100%;
@@ -36,13 +39,19 @@ const Header = (props) => {
     const handleMaxSearch = (e) =>{
         props.setValorMax(e.target.value)
     }
+    
+    const handleSortChange = (e) => {
+        props.setSortBy(e.target.value);
+    };
+
     return(
         <Container>
+            <HS> Filtros </HS>
             <InputStyles
-                type='text'
-                value={props.filterNome}
-                onChange={AfilterNome}
-                placeholder='pesquisar por nome'
+                    type='text'
+                    value={props.filterNome}
+                    onChange={AfilterNome}
+                    placeholder='pesquisar por nome'
             />
             <InputStyles
                 type='number'
@@ -56,18 +65,17 @@ const Header = (props) => {
                 onChange={handleMinSearch}
                 placeholder='valor Minimo'
             />
-             <InputStyles
+            <InputStyles
                 type='number'
                 value={props.valorMax}
                 onChange={handleMaxSearch}
                 placeholder='valor Maximo'
             />
-            <Selec>
+            <Selec value={props.sortBy} onChange={handleSortChange}>
                 <option value="">Ordenar</option>
-                <option value={props.ordenaInput}>Crescente</option>
-                <option value={props.ordenaInput}>Decrescente</option>
+                <option value="crescente">Crescente</option>
+                <option value="decrescente">Decrescente</option>
             </Selec>
-            <button>Carrinho</button>
         </Container>
     );
 }

@@ -1,36 +1,36 @@
 [{
-    "id": "001",
-    "name": "Mangá 'toire no Hanako-kun' vol.8",
-    "value": 37.9,
-    "imageUrl": "https://cdn.kobo.com/book-images/c0743487-aaf4-4529-8d6d-5b46841cc0c2/353/569/90/False/toilet-bound-hanako-kun-vol-8.jpg"
+        "id": "001",
+        "name": "toire no Hanako-kun vol.8",
+        "value": 37.9,
+        "imageUrl": "https://cdn.kobo.com/book-images/c0743487-aaf4-4529-8d6d-5b46841cc0c2/353/569/90/False/toilet-bound-hanako-kun-vol-8.jpg"
     },
     {
-    "id": "002",
-    "name": "Mangá 'toire no Hanako-kun' vol.0 " ,
-    "value": 37.9,
-    "imageUrl": "https://cdn.kobo.com/book-images/c5171f1a-7b78-471e-9de7-dc6484869cef/353/569/90/False/toilet-bound-hanako-kun-vol-0.jpg"
+        "id": "002",
+        "name": "toire no Hanako-kun vol.0 " ,
+        "value": 37.9,
+        "imageUrl": "https://cdn.kobo.com/book-images/c5171f1a-7b78-471e-9de7-dc6484869cef/353/569/90/False/toilet-bound-hanako-kun-vol-0.jpg"
     },
     {
-    "id": "003",
-    "name": "Mangá 'toire no Hanako-kun' vol.17 " ,
-    "value": 37.9,
-    "imageUrl": "https://cdn.kobo.com/book-images/9ad2ac35-ef95-4136-aba2-f89901dda83a/353/569/90/False/toilet-bound-hanako-kun-vol-17.jpg"
+        "id": "003",
+        "name": "toire no Hanako-kun vol.17 " ,
+        "value": 37.9,
+        "imageUrl": "https://cdn.kobo.com/book-images/9ad2ac35-ef95-4136-aba2-f89901dda83a/353/569/90/False/toilet-bound-hanako-kun-vol-17.jpg"
     },
     {
-    "id": "004",
-    "name": "Mangá 'Spy family' vol.4 " ,
-    "value": 25.19,
-    "imageUrl": "https://cdn.kobo.com/book-images/f4276c4e-7d57-4120-9f0b-99b1d25c99a5/353/569/90/False/spy-x-family-vol-4.jpg"
+        "id": "004",
+        "name": "Spy family vol.4 " ,
+        "value": 25.19,
+        "imageUrl": "https://cdn.kobo.com/book-images/f4276c4e-7d57-4120-9f0b-99b1d25c99a5/353/569/90/False/spy-x-family-vol-4.jpg"
     },
     {
         "id": "005",
-        "name": "Mangá 'Sono disque doll' vol.7 " ,
+        "name": "Sono disque doll vol.7 " ,
         "value": 41.9,
         "imageUrl": "https://cdn.kobo.com/book-images/01a11735-0372-49ca-aaeb-77bf9f0d42c3/353/569/90/False/my-dress-up-darling-07.jpg"
     },
     {
         "id": "006",
-        "name": "Mangá 'Jujustsu Kaisen' vol.19 " ,
+        "name": "jujustsu Kaisen vol.19 " ,
         "value": 25.19,
         "imageUrl": "https://cdn.kobo.com/book-images/669335c4-0417-49ec-a47b-47cc958632f1/353/569/90/False/jujutsu-kaisen-vol-19.jpg"
     }
