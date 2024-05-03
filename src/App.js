@@ -20,6 +20,8 @@ justify-items: center;
 
 function App() {
   const [idFilter, setIdFilter] = useState("");
+  const [valorMin, setValorMin] = useState(0);
+  const [valorMax, setValorMax] = useState(Infinity);
   const [filterNome, setFilterNome] = useState('');
   const [telaAtual, setTelaAtual] = useState("CardProd")
   const mudarTela = (novaTela) => {
@@ -35,10 +37,17 @@ function App() {
             setIdFilter={setIdFilter}
             filterNome = {filterNome}
             setFilterNome ={setFilterNome}
+            valorMin = {valorMin}
+            setValorMin ={setValorMin}
+            valorMax = {valorMax}
+            setValorMax ={setValorMax}
             mudarTela = {mudarTela}
           />
           <CardsContainer>
             {produtos
+            .filter((produto) =>{
+              return((produto.value >= valorMin || valorMin === "")  && (produto.value <= valorMax || valorMax === ""));
+            })
             .filter((produto) =>{
               return idFilter ? produto.id.includes(idFilter) : produto
             })

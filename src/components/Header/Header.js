@@ -30,7 +30,12 @@ const Header = (props) => {
     const handleIdSearch = (e) =>{
         props.setIdFilter(e.target.value)
     }
-
+    const handleMinSearch = (e) =>{
+        props.setValorMin(e.target.value)
+    }
+    const handleMaxSearch = (e) =>{
+        props.setValorMax(e.target.value)
+    }
     return(
         <Container>
             <InputStyles
@@ -47,10 +52,14 @@ const Header = (props) => {
             />
             <InputStyles
                 type='number'
+                value={props.valorMin}
+                onChange={handleMinSearch}
                 placeholder='valor Minimo'
             />
              <InputStyles
                 type='number'
+                value={props.valorMax}
+                onChange={handleMaxSearch}
                 placeholder='valor Maximo'
             />
             <Selec>
