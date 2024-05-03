@@ -10,7 +10,7 @@ export const Container = styled.div`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 export const ButtonCar = styled.button`
-    width: 200px;
+    width: 190px;
     height: 45px;
     margin-left: 5px;
     background-color: #ccc;

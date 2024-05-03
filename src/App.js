@@ -3,6 +3,7 @@ import CardProd from './components/Card/cardProduto';
 import Header from './components/Header/Header';
 import produtos from './data/produtos.json'
 import styled, {createGlobalStyle} from 'styled-components';
+import Footer from './components/Footer/FooterC';
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -51,9 +52,9 @@ function App() {
             {produtos
             .sort((a , b) =>{
               if (sortBy === 'decrescente') {
-                return b.name.localeCompare(a.name);
+                return a.value > b.value ? 1 : -1;
               } else if (sortBy === 'crescente') {
-                return a.value - b.value;
+                return a.value < b.value ? 1 : -1;
               }
               return 0;
             })
@@ -81,6 +82,7 @@ function App() {
     <main>
       <GlobalStyle />
       {renderizarTela()}
+      <Footer/>
     </main>
   );
 }

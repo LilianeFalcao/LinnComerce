@@ -1,28 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import {Container, InputStyles, HS, Selec} from './styles';
 
-const Container = styled.header`
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    padding: 20px;
-    border: 1px solid #000;
-`
-const InputStyles = styled.input`
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-`
-const HS = styled.h1`
-    width: 100%;
-`
-const Selec = styled.select`
-    width: 100%;
-    background-color: #ccc;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-`
 const Header = (props) => {    
 
     const AfilterNome = (e) =>{
