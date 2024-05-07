@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Sobre, HS, Suport, SobP, Redes} from "./styles";
+import {Container, Sobre, HS, Suport, Redes} from "./styles";
 
 export default function Footer(){
     return(

@@ -20,68 +20,72 @@ justify-items: center;
 `;
 
 function App() {
-
+  
   const [idFilter, setIdFilter] = useState("");
   const [valorMin, setValorMin] = useState(0);
-  const [valorMax, setValorMax] = useState(Infinity);
-  const [filterNome, setFilterNome] = useState('');
-  const [sortBy, setSortBy] = useState('');
-  const [telaAtual, setTelaAtual] = useState("CardProd")
+  const [valorMax, setValorMax] = useState(9999999999);
+  const [filterNome, setFilterNome] = useState("");
+  const [sortBy, setSortBy] = useState("");
+  const [cart, setCart] = useState([]);
 
-  const mudarTela = (novaTela) => {
-    setTelaAtual(novaTela)
-  }      
-  const renderizarTela = () =>{
-    if(telaAtual !== 'Carrinho'){
-      return (
-        <>
-          <Header 
-            idFilter={idFilter}
-            setIdFilter={setIdFilter}
-            filterNome = {filterNome}
-            setFilterNome ={setFilterNome}
-            valorMin = {valorMin}
-            setValorMin ={setValorMin}
-            valorMax = {valorMax}
-            setValorMax ={setValorMax}
-            sortBy = {sortBy}
-            setSortBy = {setSortBy}
-            mudarTela = {mudarTela}
-          />
-          <CardsContainer>
-            {produtos
-            .sort((a , b) =>{
-              if (sortBy === 'decrescente') {
-                return a.value > b.value ? 1 : -1;
-              } else if (sortBy === 'crescente') {
-                return a.value < b.value ? 1 : -1;
-              }
-              return 0;
-            })
-            .filter((produto) =>{
-              return((produto.value >= valorMin || valorMin === "")  && (produto.value <= valorMax || valorMax === ""));
-            })
-            .filter((produto) =>{
-              return idFilter ? produto.id.includes(idFilter) : produto
-            })
-            .filter((produto) =>{
-              return produto.name.toLowerCase().includes(filterNome.toLowerCase())
-            })
-            .map((produto) => (
-              <CardProd 
-                key={produto.id} produtos={produto}
-                 />
-            ))}
-          </CardsContainer>
-        </>
+  const adicionarCarrinho = (produto) => {
+    const newItem = cart.find((item) => item.id === produto.id);
+    if (newItem === undefined) {
+      setCart([...cart, { ...produto, amount: 1 }]);
+    } else {
+      const newCart = cart.map((item) =>
+        item.id === produto.id ? { ...newItem, amount: newItem.amount + 1 } : item
       );
+      setCart(newCart);
     }
-  }
 
+    const novoCarrinho = [...cart];
+    const guardarNovoCarrinho = JSON.stringify(novoCarrinho);
+    localStorage.setItem('produtos', guardarNovoCarrinho);
+  };
   return(
     <main>
       <GlobalStyle />
-      {renderizarTela()}
+      <Header 
+        idFilter={idFilter}
+        setIdFilter={setIdFilter}
+        filterNome = {filterNome}
+        setFilterNome ={setFilterNome}
+        valorMin = {valorMin}
+        setValorMin ={setValorMin}
+        valorMax = {valorMax}
+        setValorMax ={setValorMax}
+        sortBy = {sortBy}
+        setSortBy = {setSortBy}
+        adicionarCarrinho = {adicionarCarrinho}
+      />
+      <CardsContainer>
+        {produtos
+        .sort((a , b) =>{
+          if (sortBy === 'decrescente') {
+            return a.value > b.value ? 1 : -1;
+          } else if (sortBy === 'crescente') {
+            return a.value < b.value ? 1 : -1;
+          }
+          return 0;
+        })
+        .filter((produto) =>{
+          return((produto.value >= valorMin || valorMin === "")  && (produto.value <= valorMax || valorMax === ""));
+        })
+        .filter((produto) =>{
+          return idFilter ? produto.id.includes(idFilter) : produto
+        })
+        .filter((produto) =>{
+          return produto.name.toLowerCase().includes(filterNome.toLowerCase())
+        })
+        .map((produto) => (
+          <CardProd 
+            key={produto.id} 
+            produtos={produto}
+            adicionarCarrinho={adicionarCarrinho}
+            />
+        ))}
+      </CardsContainer>
       <Footer/>
     </main>
   );

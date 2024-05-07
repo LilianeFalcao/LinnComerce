@@ -1,15 +1,21 @@
 import React from 'react';
 import { Container, ProdutoNum, ProdutoName, ButtonCar} from './styles';
 
-const CardProd = (props) => {
+const CardProd = ({produtos, adicionarCarrinho}) => {
+
+  const handleAdicionarCarrinho = () => {
+    adicionarCarrinho(produtos);
+  };
   return (
     <Container>
-      <ProdutoNum>Id: {props.produtos.id}</ProdutoNum>
-      <ProdutoName>Nome: {props.produtos.name}</ProdutoName>
-      <ProdutoNum>Valor: {props.produtos.value}</ProdutoNum>
-      <img src={props.produtos.imageUrl} alt={props.produtos.name} />
-      <ButtonCar> Adicionar ao carrinho</ButtonCar>
-      <ButtonCar>ver carrinho</ButtonCar>
+      <ProdutoNum>Id: {produtos.id}</ProdutoNum>
+      <ProdutoName>Nome: {produtos.name}</ProdutoName>
+      <ProdutoNum>Valor: {produtos.value}</ProdutoNum>
+      <img src={produtos.imageUrl} alt={produtos.name} />
+      <div>
+      <ButtonCar onClick={handleAdicionarCarrinho} > Adicionar ao carrinho</ButtonCar>
+      <ButtonCar>carrinho</ButtonCar>
+      </div>
     </Container>
   );
 }

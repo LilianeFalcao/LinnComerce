@@ -2,10 +2,8 @@ import React from 'react';
 import {Container, InputStyles, HS, Selec} from './styles';
 
 const Header = (props) => {    
-
     const AfilterNome = (e) =>{
         props.setFilterNome(e.target.value)
-        console.log(props.filterNome)
     }
     
     const handleIdSearch = (e) =>{
