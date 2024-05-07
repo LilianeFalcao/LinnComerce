@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 import CardProd from './components/Card/cardProduto';
 import Header from './components/Header/Header';
 import produtos from './data/produtos.json'
@@ -29,6 +29,13 @@ function App() {
   const [sortBy, setSortBy] = useState("");
   const [cart, setCart] = useState([]);
 
+  useEffect(() => {
+    const savedCart = localStorage.getItem('carrinho');
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
+
   const adicionarCarrinho = (produto) => {
     const newItem = cart.find((item) => item.id === produto.id);
     if (newItem === undefined) {
@@ -39,10 +46,6 @@ function App() {
       );
       setCart(newCart);
     }
-
-    const novoCarrinho = [...cart];
-    const guardarNovoCarrinho = JSON.stringify(novoCarrinho);
-    localStorage.setItem('produtos', guardarNovoCarrinho);
   };
 
   const removerCarrinho = (produto) => {
@@ -57,6 +60,11 @@ function App() {
       setCart(newCart);
     }
   };
+
+  // Atualizar o localStorage sempre que o carrinho mudar
+  useEffect(() => {
+    localStorage.setItem('carrinho', JSON.stringify(cart));
+  }, [cart]);
 
   return(
     <main>
@@ -73,6 +81,7 @@ function App() {
         sortBy = {sortBy}
         setSortBy = {setSortBy}
         cart = {cart}
+        setCart = {setCart}
         removerCarrinho = {removerCarrinho}
         adicionarCarrinho = {adicionarCarrinho}
       />
@@ -106,6 +115,7 @@ function App() {
       </CardsContainer>
       <Carrinho 
         cart={cart}
+        setCart={setCart}
         removerCarrinho = {removerCarrinho} />
       <Footer/>
 

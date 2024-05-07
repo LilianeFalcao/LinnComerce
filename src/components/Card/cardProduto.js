@@ -3,9 +3,6 @@ import { Container, ProdutoNum, ProdutoName, ButtonCar} from './styles';
 
 const CardProd = ({produtos, adicionarCarrinho}) => {
 
-  const handleAdicionarCarrinho = () => {
-    adicionarCarrinho(produtos);
-  };
   return (
     <Container>
       <ProdutoNum>Id: {produtos.id}</ProdutoNum>
@@ -13,7 +10,7 @@ const CardProd = ({produtos, adicionarCarrinho}) => {
       <ProdutoNum>Valor: {produtos.value}</ProdutoNum>
       <img src={produtos.imageUrl} alt={produtos.name} />
       <div>
-      <ButtonCar onClick={() => {handleAdicionarCarrinho(produtos)}} > Adicionar ao carrinho</ButtonCar>
+      <ButtonCar onClick={() => {adicionarCarrinho(produtos)}} > Adicionar ao carrinho</ButtonCar>
       </div>
     </Container>
   );

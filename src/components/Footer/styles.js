@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 100vw;
     height: 50vh;
-    top: 0;
     display: flex;
+    padding: 70px;
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: row;
@@ -18,12 +18,13 @@ export const HS = styled.h3`
 `   
 export const Sobre = styled.div`
     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     left: 0;
-     margin-top: 20px;
-     cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    margin-top: 20px;
+    cursor: pointer;
+    gap:16px
 ` 
 export const Suport = styled.div`
     display: flex;
@@ -32,18 +33,18 @@ export const Suport = styled.div`
      align-items: center;
      margin-top: 20px;
      cursor: pointer;
+     gap:16px
 `    
  export const SobP = styled.p`
     color: white;
-        gap: 10px;
+    gap: 10px;
 
  `
  export const Redes = styled.div`
- 
     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
  `
  

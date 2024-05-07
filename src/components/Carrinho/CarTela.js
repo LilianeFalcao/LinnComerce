@@ -1,20 +1,30 @@
-import React from "react";
+import React , {useEffect} from "react";
 import { CarrinhoContainer,Images, ButtonCar, CarrinhoTitle, ItemContainer, ItemName, ItemAmount, TotalContainer, TotalLabel, TotalValue } from './styles';
 
-const Carrinho = ({cart, removerCarrinho}) => {
-
+const Carrinho = ({ cart, setCart, removerCarrinho }) => {
     const getTotal = () => {
         return cart.reduce((total, produto) => total + produto.value * produto.amount, 0);
     };
 
-    //remover
     const handleRemoverCarrinho = (produto) => {
         removerCarrinho(produto);
-      };
+    };
+
+    useEffect(() => {
+        localStorage.setItem('carrinho', JSON.stringify(cart));
+    }, [cart]);
+
+    useEffect(() => {
+        const carrinhoSalvo = localStorage.getItem('carrinho');
+        if (carrinhoSalvo) {
+            const carrinho = JSON.parse(carrinhoSalvo);
+            setCart(carrinho);
+        }
+    }, [setCart]);
 
     return (
         <CarrinhoContainer>
-            <CarrinhoTitle>Seu Carrinho</CarrinhoTitle>
+            <CarrinhoTitle>Carrinho de Compras</CarrinhoTitle>
             {cart.map((produto) => (
                 <ItemContainer key={produto.id}>
                     <div>
