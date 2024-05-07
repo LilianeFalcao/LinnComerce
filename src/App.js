@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import produtos from './data/produtos.json'
 import styled, {createGlobalStyle} from 'styled-components';
 import Footer from './components/Footer/FooterC';
+import Carrinho from './components/Carrinho/CarTela';
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -23,7 +24,7 @@ function App() {
   
   const [idFilter, setIdFilter] = useState("");
   const [valorMin, setValorMin] = useState(0);
-  const [valorMax, setValorMax] = useState(9999999999);
+  const [valorMax, setValorMax] = useState(Infinity);
   const [filterNome, setFilterNome] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [cart, setCart] = useState([]);
@@ -43,6 +44,20 @@ function App() {
     const guardarNovoCarrinho = JSON.stringify(novoCarrinho);
     localStorage.setItem('produtos', guardarNovoCarrinho);
   };
+
+  const removerCarrinho = (produto) => {
+    const deleteProduct = cart.find((item) => item.id === produto.id);
+    if (deleteProduct.amount > 1) {
+      const newCart = cart.map((item) =>
+        item.id === produto.id ? { ...deleteProduct, amount: deleteProduct.amount - 1 } : item
+      );
+      setCart(newCart);
+    } else {
+      const newCart = cart.filter((item) => item.id !== produto.id);
+      setCart(newCart);
+    }
+  };
+
   return(
     <main>
       <GlobalStyle />
@@ -57,6 +72,8 @@ function App() {
         setValorMax ={setValorMax}
         sortBy = {sortBy}
         setSortBy = {setSortBy}
+        cart = {cart}
+        removerCarrinho = {removerCarrinho}
         adicionarCarrinho = {adicionarCarrinho}
       />
       <CardsContainer>
@@ -83,10 +100,15 @@ function App() {
             key={produto.id} 
             produtos={produto}
             adicionarCarrinho={adicionarCarrinho}
+            removerCarrinho = {removerCarrinho}
             />
         ))}
       </CardsContainer>
+      <Carrinho 
+        cart={cart}
+        removerCarrinho = {removerCarrinho} />
       <Footer/>
+
     </main>
   );
 }

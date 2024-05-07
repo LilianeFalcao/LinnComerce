@@ -13,8 +13,7 @@ const CardProd = ({produtos, adicionarCarrinho}) => {
       <ProdutoNum>Valor: {produtos.value}</ProdutoNum>
       <img src={produtos.imageUrl} alt={produtos.name} />
       <div>
-      <ButtonCar onClick={handleAdicionarCarrinho} > Adicionar ao carrinho</ButtonCar>
-      <ButtonCar>carrinho</ButtonCar>
+      <ButtonCar onClick={() => {handleAdicionarCarrinho(produtos)}} > Adicionar ao carrinho</ButtonCar>
       </div>
     </Container>
   );
