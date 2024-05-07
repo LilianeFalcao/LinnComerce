@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, InputStyles, HS, Selec} from './styles';
+import {Container,Nome, InputStyles, Logos, Selec} from './styles';
 
 const Header = (props) => {    
     const AfilterNome = (e) =>{
@@ -22,7 +22,8 @@ const Header = (props) => {
 
     return(
         <Container>
-            <HS> Filtros </HS>
+            <Logos src='https://cdn-icons-png.flaticon.com/512/1797/1797131.png'/> 
+            <Nome>Owl Mangas</Nome>
             <InputStyles
                     type='text'
                     value={props.filterNome}
@@ -48,7 +49,7 @@ const Header = (props) => {
                 placeholder='valor Maximo'
             />
             <Selec value={props.sortBy} onChange={handleSortChange}>
-                <option value="">Ordenar</option>
+                <option value="vazio">Ordenar</option>
                 <option value="crescente">Crescente</option>
                 <option value="decrescente">Decrescente</option>
             </Selec>

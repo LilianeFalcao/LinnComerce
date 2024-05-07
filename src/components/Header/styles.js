@@ -18,6 +18,16 @@ export const HS = styled.h1`
     width: 100%;
     color: white;
 `
+export const Logos = styled.img`
+    width: 50px;
+    heigth: 20px;
+    color: white;
+    filter: invert(1);
+`
+export const Nome = styled.h1`
+    font-size: 25px;
+    color: white;
+`
 export const Selec = styled.select`
     width: 100%;
     background-color: #ccc;
