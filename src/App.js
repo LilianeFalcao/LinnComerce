@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from 'react';
+import React , {useState} from 'react';
 import CardProd from './components/Card/cardProduto';
 import Header from './components/Header/Header';
 import produtos from './data/produtos.json'
