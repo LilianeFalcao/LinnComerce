@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Sobre, HS, Suport, Redes} from "./styles";
+import {Container, SocialButton, Sobre, HS, Suport, Redes} from "./styles";
 
 export default function Footer(){
     return(
@@ -19,6 +19,11 @@ export default function Footer(){
             </Suport>
             <Redes>
                 <HS>Nossas redes sociais: </HS>
+                <div>
+                    <SocialButton href="https://www.instagram.com/gsmartins216/" target="_blank" > 
+                       instagram
+                    </SocialButton>
+                </div>
             </Redes>
         </Container>
         </>

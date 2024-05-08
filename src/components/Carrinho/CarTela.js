@@ -11,7 +11,9 @@ const Carrinho = ({ cart, setCart, removerCarrinho }) => {
     };
 
     useEffect(() => {
-        localStorage.setItem('carrinho', JSON.stringify(cart));
+        if(cart.length > 0){
+            localStorage.setItem('carrinho', JSON.stringify(cart));
+        }
     }, [cart]);
 
     useEffect(() => {

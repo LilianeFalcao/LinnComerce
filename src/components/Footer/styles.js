@@ -14,7 +14,9 @@ export const Container = styled.div`
 `
 export const HS = styled.h3`
     display: flex;
+    font-size: 30px;
     flex-direction: row;
+    justify-content: flex-start
 `   
 export const Sobre = styled.div`
     display: flex;
@@ -46,5 +48,20 @@ export const Suport = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    gap: 20px;
  `
- 
+ export const SocialButton = styled.a`
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    background-color: #3b5998; /* Cor do Facebook, por exemplo */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+    background-color: #2d4373; /* Cor mais escura no hover */
+    }
+`;

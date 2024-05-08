@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from 'react';
+import React , {useState} from 'react';
 import CardProd from './components/Card/cardProduto';
 import Header from './components/Header/Header';
 import produtos from './data/produtos.json'
@@ -29,25 +29,17 @@ function App() {
   const [sortBy, setSortBy] = useState("");
   const [cart, setCart] = useState([]);
 
-  useEffect(() => {
-    const savedCart = localStorage.getItem('carrinho');
-    if (savedCart) {
-      setCart(JSON.parse(savedCart));
-    }
-  }, []);
-
   const adicionarCarrinho = (produto) => {
     const newItem = cart.find((item) => item.id === produto.id);
     if (newItem === undefined) {
       setCart([...cart, { ...produto, amount: 1 }]);
     } else {
-      const newCart = cart.map((item) =>
+        const newCart = cart.map((item) =>
         item.id === produto.id ? { ...newItem, amount: newItem.amount + 1 } : item
       );
       setCart(newCart);
     }
   };
-
   const removerCarrinho = (produto) => {
     const deleteProduct = cart.find((item) => item.id === produto.id);
     if (deleteProduct.amount > 1) {
@@ -60,11 +52,6 @@ function App() {
       setCart(newCart);
     }
   };
-
-  // Atualizar o localStorage sempre que o carrinho mudar
-  useEffect(() => {
-    localStorage.setItem('carrinho', JSON.stringify(cart));
-  }, [cart]);
 
   return(
     <main>
