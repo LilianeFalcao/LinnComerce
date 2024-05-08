@@ -1,4 +1,4 @@
-import React , {useState} from 'react';
+import React , {useState, useEffect} from 'react';
 import CardProd from './components/Card/cardProduto';
 import Header from './components/Header/Header';
 import produtos from './data/produtos.json'
@@ -40,6 +40,7 @@ function App() {
       setCart(newCart);
     }
   };
+
   const removerCarrinho = (produto) => {
     const deleteProduct = cart.find((item) => item.id === produto.id);
     if (deleteProduct.amount > 1) {
