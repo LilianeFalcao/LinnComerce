@@ -1,31 +1,20 @@
 import React from "react";
-import {Container, SocialButton, Sobre, HS, Suport, Redes} from "./styles";
-
+import {Container, HS, InfoContainer, Infos, Alink} from "./styles";
 export default function Footer(){
     return(
-        <>
-            <Container>
-            <Sobre>
-                <HS>Sobre:</HS>
-                <p>Quem somos?</p>
-                <p>O que fazemos?</p>
-                <p>Como Fazemos?</p>
-                <p>Dúvidas</p>
-            </Sobre>
-            <Suport>
-                <HS>Descubra:</HS>
-                <p>Suporte</p>
-                <p>Problemas?</p>
-            </Suport>
-            <Redes>
-                <HS>Nossas redes sociais: </HS>
-                <div>
-                    <SocialButton href="https://www.instagram.com/gsmartins216/" target="_blank" > 
-                       instagram
-                    </SocialButton>
-                </div>
-            </Redes>
-        </Container>
-        </>
+       <>
+       <Container>
+            <HS> @2024 linn yohan</HS>
+            <InfoContainer>
+            Contatos: 
+                <Infos>
+                <Alink href="https://www.instagram.com/glacial_linn/" target="_blank" rel="noopener noreferrer">Insta</Alink> 
+                <Alink href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">whats</Alink>
+                <Alink href="https://x.com/YohanHawks" target="_blank" rel="noopener noreferrer">X / twitter</Alink>
+                <Alink href="https://www.linkedin.com/in/lilianefalcao" target="_blank" rel="noopener noreferrer">linkedin</Alink>
+                </Infos>
+            </InfoContainer>
+       </Container>
+       </>
     );
 }

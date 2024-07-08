@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
     width: 100vw;
     height: 50vh;
@@ -12,9 +11,9 @@ export const Container = styled.div`
     background-color: #213253;
     color: white;
 `
-export const HS = styled.h3`
+export const HS = styled.h1`
     display: flex;
-    font-size: 30px;
+    font-size: 20px;
     flex-direction: row;
     justify-content: flex-start
 `   
@@ -28,40 +27,26 @@ export const Sobre = styled.div`
     cursor: pointer;
     gap:16px
 ` 
-export const Suport = styled.div`
+ export const InfoContainer = styled.div`
     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     margin-top: 20px;
-     cursor: pointer;
-     gap:16px
-`    
- export const SobP = styled.p`
-    color: white;
-    gap: 10px;
-
- `
- export const Redes = styled.div`
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 20px;
+    gap: 15px;
+    font-size: 20px;
  `
- export const SocialButton = styled.a`
+ export const Infos = styled.div`
     display: flex;
-    flex-direction: row;
-    padding: 10px 20px;
-    background-color: #3b5998; /* Cor do Facebook, por exemplo */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-    background-color: #2d4373; /* Cor mais escura no hover */
-    }
+    justify-content: center;
+    gap: 15px;
+    font-size: 18px;
 `;
+
+export const Alink = styled.a`
+    color: white;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover{
+        color: #101d1d;
+    }
+`
