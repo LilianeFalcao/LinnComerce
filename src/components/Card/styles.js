@@ -8,7 +8,9 @@ export const Container = styled.div`
     margin-bottom: 16px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 `;
+
 export const ButtonCar = styled.button`
     width: 190px;
     height: 45px;
@@ -25,3 +27,10 @@ font-weight: bold;
 export const ProdutoName = styled.p`
 margin-bottom: 8px;
 `;
+
+export const ImgProd = styled.img`
+    width: 250px
+    margin: 0 auto; 
+    max-width: 100%; 
+    transition: none;
+`

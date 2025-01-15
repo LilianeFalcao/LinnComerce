@@ -1,0 +1,80 @@
+.contactInfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contactInfoContainer h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color:white;
+    font-weight: bold;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Permite que os ícones se ajustem em telas menores */
+}
+
+.icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #1c1c1c;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon a:hover {
+    transform: scale(1.1); /* Efeito de zoom no hover */
+}
+
+.instagram:hover {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: white;
+}
+
+.whatsapp:hover {
+    background-color: #25d366;
+    color: white;
+}
+
+.linkedin:hover {
+    background-color: #0077b5;
+    color: white;
+}
+
+.gitHub:hover {
+    background-color: #333;
+    color: white;
+}
+
+.textDireitos {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Estilo adicional para o container principal */
+footer {
+    background-color: #784821;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 4px solid #1c1c1c;
+}
+
+footer p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #bbb;
+}

@@ -3,24 +3,27 @@ import styled from "styled-components";
 export const Container = styled.header`
     display: flex;
     flex-direction: row;
-    gap: 16px;
-    padding: 20px;
+    gap: 20px; 
+    justify-content: center;
+    align-items: center; 
+    padding: 5px;
     border: 1px solid #000;
-    background-color: #213253;
+    background-color: #784821;
 
     @media (max-width: 768px) {
         flex-direction: column;
+        align-items: flex-start; 
     }
 `
 export const InputStyles = styled.input`
-    width: 100%;
-    padding: 8px;
+    width: 600px;
+    padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 20px;
     flex-wrap: wrap;
 
     @media (max-width: 768px) {
-        width: calc(100% - 20px); /* Ajuste de margem para melhor visualização */
+        width: calc(100% - 20px); 
     }
 `
 export const HS = styled.h1`
@@ -28,22 +31,9 @@ export const HS = styled.h1`
     color: white;
 `
 export const Logos = styled.img`
-    width: 50px;
-    heigth: 20px;
-    color: white;
-    filter: invert(1);
-`
-export const Nome = styled.h1`
-    font-size: 25px;
-    color: white;
-`
-export const Selec = styled.select`
-    width: 100%;
-    background-color: #ccc;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-
-    @media (max-width: 768px) {
-        width: calc(100% - 20px); /* Ajuste de margem para melhor visualização */
-    }
+    width: auto; 
+    height: 120px; 
+    max-width: 100px; 
+    object-fit: contain; 
+    align-self: center;
 `

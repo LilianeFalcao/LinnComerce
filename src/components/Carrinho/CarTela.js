@@ -30,7 +30,7 @@ const Carrinho = ({ cart, setCart, removerCarrinho }) => {
             {cart.map((produto) => (
                 <ItemContainer key={produto.id}>
                     <div>
-                     <Images src={produto.imageUrl} alt={produto.name} />
+                        <Images src={produto.imageUrl} alt={produto.name} />
                     </div>
                     <div>
                         <ItemName>{produto.name}</ItemName> - <ItemAmount>{produto.amount}x</ItemAmount>
