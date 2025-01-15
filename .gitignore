@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+#pastas do back
+src/constants/baseUrls.js
+
 # testing
 /coverage
 
